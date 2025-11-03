@@ -64,6 +64,21 @@ To quantitatively assess the performance, confusion matrices were generated for 
 Meanwhile, the confusion matrix for quality classification demonstrates that the model is capable of distinguishing general performance levels but occasionally confuses borderline cases between \textit{good} and \textit{excellent}. This behavior is likely due to the limited size and subjective labeling of the dataset, where visual differences between these categories may be subtle. Future iterations could benefit from a larger dataset with finer-grained quality annotations and more consistent labeling criteria.
 
 Overall, the evaluation confirms that the proposed system is effective in identifying leg movements and providing qualitative feedback. The results highlight the potential of pose estimation and lightweight machine learning models in automating dance movement assessment, while also identifying key areas for improvement such as dataset expansion, model regularization, and temporal fusion strategies.
+\begin{table}[htbp]
+    \centering
+    \caption{Overall model evaluation metrics for movement and quality classification}
+    \label{tab:model_metrics}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Metric} & \textbf{Description} & \textbf{Accuracy (\%)} \\
+        \midrule
+        Movement Classification & Correctly identified dance movement type & 27.64 \\
+        Quality Classification & Correctly identified performance quality label & 64.63 \\
+        \midrule
+        Total Matched Frames & Frames aligned with ground truth annotations & 246 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 % Show in this chapter proofs why your proposed solution works.  However, presenting results ("It worked") without an appropriate explanation does not show thorough understanding.  Aside from the data and results that you have obtained, and their explanation, the discussion includes why components of your proposed solution worked or did not work in accordance to what you described in the evaluation process, and how the proposed solution performed and fared. Interpret the results and the reasons why they were obtained.  If your results are incorrect, apparent discrepancies from theory should be pointed out and explained. In essence, what do the results mean?  Citing existing publication can help you compare your results and your explanations.
 
