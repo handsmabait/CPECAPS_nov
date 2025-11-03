@@ -21,26 +21,38 @@ The landmark detection forms the foundation for subsequent gait analysis, as the
 
 The training dataset comprises video frames captured from various walking scenarios to ensure robust model performance across different conditions. Figures \ref{fig:train_sample_1} through \ref{fig:train_sample_3} present representative samples from the training dataset, demonstrating the diversity of poses, lighting conditions, and perspectives included in the model training process.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{frame_000223.jpg}
-    \caption{Training data sample}
-    \label{fig:train_sample_1}
-\end{figure}
+% fraame extraction
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\linewidth]{frame_000225.jpg}
-    \caption{Training data sample demonstrating }
-    \label{fig:train_sample_2}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\linewidth]{frame_000226.jpg}
+    \includegraphics[width=\linewidth]{frame_000040.jpg}
     \caption{Training data sample illustrating }
     \label{fig:train_sample_3}
 \end{figure}
+
+
+%live prediction
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{live_prediction.png}
+    \caption{Live prediction sample during application runtime}
+    \label{fig:train_sample_1}
+\end{figure}
+%model evaluation
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{confusion_matrix_moves.png}
+    \caption{Confusion matrix for movement classification}
+    \label{fig:train_sample_1}
+\end{figure}
+%model evaluation  
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{confusion_matrix_quality.png}
+    \caption{Confusion matrix for movement classification}
+    \label{fig:train_sample_1}
+\end{figure}
+
 
 % Show in this chapter proofs why your proposed solution works.  However, presenting results ("It worked") without an appropriate explanation does not show thorough understanding.  Aside from the data and results that you have obtained, and their explanation, the discussion includes why components of your proposed solution worked or did not work in accordance to what you described in the evaluation process, and how the proposed solution performed and fared. Interpret the results and the reasons why they were obtained.  If your results are incorrect, apparent discrepancies from theory should be pointed out and explained. In essence, what do the results mean?  Citing existing publication can help you compare your results and your explanations.
 
