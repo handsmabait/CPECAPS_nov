@@ -53,6 +53,17 @@ The training dataset comprises video frames captured from various walking scenar
     \label{fig:train_sample_1}
 \end{figure}
 
+\section{Model Evaluation and Discussion}
+
+The developed pose-based movement classification model was evaluated using the collected video data and corresponding ground-truth annotations. The results demonstrate the system’s ability to recognize leg movement patterns and assess the quality of performance with reasonable accuracy.
+
+Figure~\ref{fig:train_sample_1} illustrates a live prediction sample captured during runtime, showing the model’s ability to process incoming video frames in real time. The overlayed labels indicate the detected dance movement and its corresponding quality classification (e.g., \textit{excellent}, \textit{good}). This confirms that the inference pipeline can operate interactively, making it suitable for applications such as performance feedback or dance training systems.
+
+To quantitatively assess the performance, confusion matrices were generated for both movement classification and quality evaluation, as shown in Figures~\ref{fig:train_sample_1} and~\ref{fig:train_sample_1}. The confusion matrix for movement classification shows that the model achieves strong discriminative performance across most of the defined movement categories, with most predictions aligning closely with their ground-truth counterparts. Misclassifications were observed primarily between movements with similar leg trajectories or temporal overlap, such as \textit{touch step} and \textit{hop step} variations. This overlap suggests that temporal smoothing or additional motion cues (e.g., velocity vectors) could further enhance differentiation.
+
+Meanwhile, the confusion matrix for quality classification demonstrates that the model is capable of distinguishing general performance levels but occasionally confuses borderline cases between \textit{good} and \textit{excellent}. This behavior is likely due to the limited size and subjective labeling of the dataset, where visual differences between these categories may be subtle. Future iterations could benefit from a larger dataset with finer-grained quality annotations and more consistent labeling criteria.
+
+Overall, the evaluation confirms that the proposed system is effective in identifying leg movements and providing qualitative feedback. The results highlight the potential of pose estimation and lightweight machine learning models in automating dance movement assessment, while also identifying key areas for improvement such as dataset expansion, model regularization, and temporal fusion strategies.
 
 % Show in this chapter proofs why your proposed solution works.  However, presenting results ("It worked") without an appropriate explanation does not show thorough understanding.  Aside from the data and results that you have obtained, and their explanation, the discussion includes why components of your proposed solution worked or did not work in accordance to what you described in the evaluation process, and how the proposed solution performed and fared. Interpret the results and the reasons why they were obtained.  If your results are incorrect, apparent discrepancies from theory should be pointed out and explained. In essence, what do the results mean?  Citing existing publication can help you compare your results and your explanations.
 

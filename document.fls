@@ -1,0 +1,4 @@
+PWD d:\CPECAPS_nov
+INPUT C:\Users\Hans\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\CPECAPS_nov\document.tex
+OUTPUT document.log
