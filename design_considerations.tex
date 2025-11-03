@@ -9,3 +9,97 @@ Lin (2015) finds that immediate, clear feedback in dance exergames improves enga
 
 \section{Accessibility, Personalization, and Evaluation}
 Yu and Xiong (2019) convert DTW distances into calibrated percentage scores, which supports per-user calibration and comparison against an individualized baseline. Tölgyessy et al. (2021) recommend measuring sensor-level metrics such as joint error and dropout rates when choosing a capture modality. Therefore, system designs should include adjustable sensitivity, alternate gesture mappings, and user profiles, and evaluation should combine sensor metrics (joint error, dropout, latency) with human-centered measures (perceived accuracy, engagement, and learning gain) to justify architecture and scoring choices.
+
+
+
+% ---- Technical standards (ME) ----
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+
+\begin{SingleSpace}
+\begin{longtable}{|p{0.28\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\caption{Technical standards (ME) -- scope and compliance justification}
+\label{tab:technical_standards_missing} \\
+
+\hline
+\textbf{Standard / Regulation} & \textbf{Scope of Use in the System} & \textbf{Compliance Justification} \\ \hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Standard / Regulation} & \textbf{Scope of Use in the System} & \textbf{Compliance Justification} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\emph{ISO 9241-210: Human-centered system design} &
+UI design and user interaction &
+Ensures user comfort and reduces fatigue during dance learning. \\ \hline
+
+\emph{IEEE 802.11: Wi-Fi communication} &
+If remote database or cloud storage is used &
+Ensures interoperability and stable streaming between client and remote endpoints. \\ \hline
+
+\emph{ISO 27001: Data privacy \& security} &
+Storage and handling of video recordings &
+Prevents unauthorized access to personal video data and enforces secure storage practices. \\ \hline
+
+\emph{ISO 25010: Software quality characteristics} &
+Reliability, maintainability, usability &
+Used as a quality benchmark during evaluation and acceptance testing. \\ \hline
+
+\emph{IEEE 754: Floating-point calculations} &
+Pose and angle computations &
+Ensures mathematical consistency and predictable numerical behaviour across platforms. \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+% ---- end technical standards table ----
+
+
+
+
+% ---- C4: Environmental & Safety standards ----
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+
+\begin{SingleSpace}
+\begin{longtable}{|p{0.28\textwidth}|p{0.66\textwidth}|}
+\caption{Environmental \& Safety standards and their application in the project}
+\label{tab:env_safety_compact} \\
+
+\hline
+\textbf{Standard / Regulation} & \textbf{Application} \\ \hline
+\endfirsthead
+
+\multicolumn{2}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Standard / Regulation} & \textbf{Application} \\ \hline
+\endhead
+
+\hline \multicolumn{2}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\emph{RA 9003: Ecological Solid Waste Management Act} &
+Limits hardware waste; project reuses existing webcams and peripherals where possible to reduce e-waste and disposal burden. \\ \hline
+
+\emph{ISO 14001: Environmental Management System} &
+Guides procurement and lifecycle decisions to ensure minimal environmental impact when selecting cameras, computers, and consumables. \\ \hline
+
+\emph{ISO 45001: Occupational health \& safety} &
+Protects users and participants performing physical activity by mandating risk assessment, safe spaces (non-slip flooring), and emergency procedures. \\ \hline
+
+\emph{IEC 60950-1: IT equipment electrical safety} &
+Ensures safe usage of laptops, webcams, power supplies, and peripherals during prolonged sessions to prevent electrical hazards. \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+% ---- end environmental & safety table ----
+
+
+
