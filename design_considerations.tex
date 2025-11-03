@@ -11,13 +11,15 @@ Lin (2015) finds that immediate, clear feedback in dance exergames improves enga
 Yu and Xiong (2019) convert DTW distances into calibrated percentage scores, which supports per-user calibration and comparison against an individualized baseline. Tölgyessy et al. (2021) recommend measuring sensor-level metrics such as joint error and dropout rates when choosing a capture modality. Therefore, system designs should include adjustable sensitivity, alternate gesture mappings, and user profiles, and evaluation should combine sensor metrics (joint error, dropout, latency) with human-centered measures (perceived accuracy, engagement, and learning gain) to justify architecture and scoring choices.
 
 
-\renewcommand{\arraystretch}{1.0}
-\setlength{\tabcolsep}{6pt}
+
+% ---- Technical standards (ME) ----
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
 
 \begin{SingleSpace}
-\begin{longtable}{|p{0.30\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
-\caption{Technical standards and their scope / justification in the system} 
-\label{tab:technical_standards} \\
+\begin{longtable}{|p{0.28\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+\caption{Technical standards (ME) -- scope and compliance justification}
+\label{tab:technical_standards_missing} \\
 
 \hline
 \textbf{Standard / Regulation} & \textbf{Scope of Use in the System} & \textbf{Compliance Justification} \\ \hline
@@ -33,93 +35,71 @@ Yu and Xiong (2019) convert DTW distances into calibrated percentage scores, whi
 \hline
 \endlastfoot
 
-\emph{ISO 9241-210} (Human-centered system design) &
+\emph{ISO 9241-210: Human-centered system design} &
 UI design and user interaction &
-Ensures user comfort, reduces fatigue, and guides iterative usability-driven design for dance learning. \\ \hline
+Ensures user comfort and reduces fatigue during dance learning. \\ \hline
 
-\emph{IEEE 802.11} (Wi-Fi communication) &
+\emph{IEEE 802.11: Wi-Fi communication} &
 If remote database or cloud storage is used &
-Ensures interoperability and stable streaming between client and cloud/storage endpoints. \\ \hline
+Ensures interoperability and stable streaming between client and remote endpoints. \\ \hline
 
-\emph{ISO 27001 / GDPR} (Data privacy \& security) &
-Storage and handling of video recordings and personal data &
-Frameworks to prevent unauthorized access, mandate secure storage, and ensure legal compliance for personal video data. \\ \hline
+\emph{ISO 27001: Data privacy \& security} &
+Storage and handling of video recordings &
+Prevents unauthorized access to personal video data and enforces secure storage practices. \\ \hline
 
-\emph{ISO 25010} (Software quality characteristics) &
-Reliability, maintainability, usability, performance, etc. &
-Used as a quality benchmark for evaluation, test criteria, and acceptance checks during development. \\ \hline
+\emph{ISO 25010: Software quality characteristics} &
+Reliability, maintainability, usability &
+Used as a quality benchmark during evaluation and acceptance testing. \\ \hline
 
-\emph{IEEE 754} (Floating-point calculations) &
-Pose and angle computations /
-numerical processing &
+\emph{IEEE 754: Floating-point calculations} &
+Pose and angle computations &
 Ensures mathematical consistency and predictable numerical behaviour across platforms. \\ \hline
 
-\emph{ASHRAE 55} (Comfort during motion activity) — optional (ME) &
-Physical room environment for motion studies &
-Provides guidance on thermal and spatial comfort to ensure safe operating conditions during dance experiments. \\ \hline
-
 \end{longtable}
 \end{SingleSpace}
+% ---- end technical standards table ----
 
 
-\renewcommand{\arraystretch}{1.0}
-\setlength{\tabcolsep}{6pt}
+
+
+% ---- C4: Environmental & Safety standards ----
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
 
 \begin{SingleSpace}
-\begin{longtable}{|p{0.30\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
-\caption{Environmental and safety standards relevant to the system and experimental setup}
-\label{tab:env_safety_standards} \\
+\begin{longtable}{|p{0.28\textwidth}|p{0.66\textwidth}|}
+\caption{Environmental \& Safety standards and their application in the project}
+\label{tab:env_safety_compact} \\
 
 \hline
-\textbf{Standard / Regulation} & \textbf{Scope of Use in the System} & \textbf{Compliance Justification} \\ \hline
+\textbf{Standard / Regulation} & \textbf{Application} \\ \hline
 \endfirsthead
 
-\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
-\textbf{Standard / Regulation} & \textbf{Scope of Use in the System} & \textbf{Compliance Justification} \\ \hline
+\multicolumn{2}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Standard / Regulation} & \textbf{Application} \\ \hline
 \endhead
 
-\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\hline \multicolumn{2}{r}{{Continued on next page}} \\ \hline
 \endfoot
 
 \hline
 \endlastfoot
 
-\emph{ISO 14001} (Environmental management) &
-Device lifecycle, laboratory waste handling, energy consumption of workstations &
-Ensures systematic control of environmental impacts (e.g., energy use, e-waste) and guides sustainable disposal of cameras, GPUs, and electronics. \\ \hline
+\emph{RA 9003: Ecological Solid Waste Management Act} &
+Limits hardware waste; project reuses existing webcams and peripherals where possible to reduce e-waste and disposal burden. \\ \hline
 
-\emph{WEEE Directive / local e-waste regulation} &
-End-of-life handling and recycling of electronic components &
-Mandates proper collection and recycling routes for electrical equipment to reduce landfill and hazardous waste. \\ \hline
+\emph{ISO 14001: Environmental Management System} &
+Guides procurement and lifecycle decisions to ensure minimal environmental impact when selecting cameras, computers, and consumables. \\ \hline
 
-\emph{RoHS (Restriction of Hazardous Substances)} &
-Selection and procurement of electronic hardware (sensors, cables, PCBs) &
-Limits hazardous materials (lead, mercury, cadmium) in devices used, reducing toxic exposure and disposal risks. \\ \hline
+\emph{ISO 45001: Occupational health \& safety} &
+Protects users and participants performing physical activity by mandating risk assessment, safe spaces (non-slip flooring), and emergency procedures. \\ \hline
 
-\emph{ISO 45001} (Occupational health \& safety management) &
-Laboratory and user testing sessions; staff and participant safety procedures &
-Provides a framework to identify hazards, implement controls (e.g., slip/trip/fall mitigation for dance experiments), and protect participants and researchers. \\ \hline
-
-\emph{IEC 62368-1} (Safety requirements for audio/video and ICT equipment) &
-Electrical/electronic safety of cameras, computers, chargers, and peripherals used in the setup &
-Specifies safe design and installation practices to prevent electrical shock, overheating, and fire hazards in experimental rigs. \\ \hline
-
-\emph{ISO 12100} (Safety of machinery -- risk assessment) &
-Risk assessment for experimental apparatus and movement spaces (e.g., bamboo poles, floor surface) &
-Guides formal hazard analysis and risk reduction for moving elements, trip hazards, and equipment placement during Tinikling trials. \\ \hline
-
-\emph{Local Fire Code / NFPA 101 (Life Safety Code)} &
-Venue occupancy, egress, electrical wiring, and emergency procedures during data-collection sessions &
-Ensures safe occupant loads, clear egress routes, and appropriate electrical/fire safety provisions for on-site testing. \\ \hline
-
-\emph{IEC 60529 (IP code)} &
-Selection/deployment of hardware in semi-outdoor or dusty environments &
-Specifies ingress protection levels to select housings and cameras appropriate for environmental exposure, reducing device failure and contamination risks. \\ \hline
-
-\emph{Exercise safety guidance (e.g., ACSM / WHO physical activity recommendations)} &
-Participant screening, warm-up/cooldown protocols, and safe activity limits during user studies &
-Provides evidence-based guidance to minimise injury risk during dance trials and to design ethical, safe participant protocols. \\ \hline
+\emph{IEC 60950-1: IT equipment electrical safety} &
+Ensures safe usage of laptops, webcams, power supplies, and peripherals during prolonged sessions to prevent electrical hazards. \\ \hline
 
 \end{longtable}
 \end{SingleSpace}
+% ---- end environmental & safety table ----
+
+
 

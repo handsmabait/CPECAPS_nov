@@ -87,12 +87,12 @@ For cultural preservation, motion capture (MoCap) has been widely adopted. Rizha
 
 These studies show the potential of pose estimation and deep learning for advancing both modern dance movement design and traditional folk dance preservation. However, there is little to no research in the Philippines that applies pose estimation to folk dances—particularly Tinikling—representing a significant gap and opportunity for future exploration. 
 
-% ---- 'Lacking in the Approaches' table (paste into your 'Lacking in the Approaches' section) ----
-\renewcommand{\arraystretch}{1.0}
-\setlength{\tabcolsep}{6pt}
+% ---- Lacking in the Approaches (fits margins) ----
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
 
 \begin{SingleSpace}
-\begin{longtable}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.44\textwidth}|}
+\begin{longtable}{|p{0.19\textwidth}|p{0.30\textwidth}|p{0.46\textwidth}|}
 \caption{Movements / body parts detected and limitations observed in reviewed approaches}
 \label{tab:lacking_in_approaches} \\
 
@@ -116,7 +116,7 @@ Single-frame methods fail on fast, complex dance motion; multi-frame approaches 
 
 \emph{Protopapadakis et al. (2018)} &
 Upper and lower body joints &
-Designed to track frontal views only; front/back ambiguity and limited movement range handling. \\ \hline
+Designed to track frontal views only; front/back ambiguity and limited movement-range handling. \\ \hline
 
 \emph{Zhao et al. (2025)} &
 Full body &
@@ -144,7 +144,7 @@ DTW scoring is sensitive to temporal misalignment and sensor noise. \\ \hline
 
 \emph{Rallis et al. (2019)} &
 Full body with 3D skeleton &
-Low-cost sensors (e.g., Kinect) have limited spatial fidelity vs motion-capture rigs; noisy trajectories. \\ \hline
+Low-cost sensors (e.g., Kinect) have limited spatial fidelity vs.\ motion-capture rigs; trajectories are noisier. \\ \hline
 
 \emph{Sun \& Song (2025)} &
 Full body with skeleton &
@@ -156,7 +156,8 @@ Scoring is vulnerable to per-performer style variation and dataset bias. \\ \hli
 
 \end{longtable}
 \end{SingleSpace}
-% ---- end table ----
+% ---- end Lacking table ----
+
 
 
 \section{Summary}
