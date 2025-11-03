@@ -1,0 +1,129 @@
+\DTLgidxSetDefaultDB{notation}
+
+\newterm
+[
+label={not:It},
+description={RGB image (frame) at time \(t\)},
+sort={I}
+]
+{\ensuremath{I_{t}}}
+
+\newterm
+[
+label={not:Ft},
+description={Video frame index \(t\)},
+sort={F}
+]
+{\ensuremath{F_{t}}}
+
+\newterm
+[
+label={not:K},
+description={Number of keypoints (joints) in the pose model},
+sort={K}
+]
+{\ensuremath{K}}
+
+\newterm
+[
+label={not:pk_t},
+description={Coordinates of keypoint \(k\) at time \(t\), \(p_{k}^{(t)}=(x_{k}^{(t)},y_{k}^{(t)},z_{k}^{(t)})\) (omit \(z\) for 2D)},
+sort={p}
+]
+{\ensuremath{p_{k}^{(t)}=(x_{k}^{(t)},y_{k}^{(t)},z_{k}^{(t)})}}
+
+\newterm
+[
+label={not:Pt},
+description={Pose matrix at time \(t\), \(\mathbf{P}^{(t)}\in\mathbb{R}^{K\times d}\) (d = 2 or 3)},
+sort={P}
+]
+{\ensuremath{\mathbf{P}^{(t)}\in\mathbb{R}^{K\times d}}}
+
+\newterm
+[
+label={not:X},
+description={Pose sequence of length \(T\): \(\mathbf{X}\in\mathbb{R}^{T\times K\times d}\)},
+sort={X}
+]
+{\ensuremath{\mathbf{X}\in\mathbb{R}^{T\times K\times d}}}
+
+\newterm
+[
+label={not:theta},
+description={Joint angle for joint \(k\) at time \(t\), \(\theta_{k}^{(t)}\)},
+sort={t}
+]
+{\ensuremath{\theta_{k}^{(t)}}}
+
+\newterm
+[
+label={not:rigid},
+description={Rigid transform: rotation matrix and translation vector},
+sort={r}
+]
+{\ensuremath{R,\mathbf{t}}}
+
+\newterm
+[
+label={not:fps},
+description={Camera frame rate (frames per second)},
+sort={f}
+]
+{\ensuremath{f}}
+
+\newterm
+[
+label={not:Delta},
+description={Temporal difference operator between frames},
+sort={D}
+]
+{\ensuremath{\Delta(\cdot)}}
+
+\newterm
+[
+label={not:DTW},
+description={Dynamic Time Warping distance between two sequences},
+sort={D2}
+]
+{\ensuremath{\mathrm{DTW}(\cdot,\cdot)}}
+
+\newterm
+[
+label={not:MPJPE},
+description={Mean per-joint position error (mm)},
+sort={M}
+]
+{\ensuremath{\mathrm{MPJPE}}}
+
+\newterm
+[
+label={not:MOTA},
+description={Multi-object tracking accuracy (percentage)},
+sort={M2}
+]
+{\ensuremath{\mathrm{MOTA}}}
+
+\newterm
+[
+label={not:hat},
+description={Predicted quantity (example: \(\hat{p}\))},
+sort={h}
+]
+{\ensuremath{\hat{p}}}
+
+\newterm
+[
+label={not:bar},
+description={Reference or ground-truth quantity (example: \(\bar{p}\))},
+sort={b}
+]
+{\ensuremath{\bar{p}}}
+
+\newterm
+[
+label={not:score},
+description={Final scoring metric (normalized percentage, 0--100\%)},
+sort={S2}
+]
+{\ensuremath{\mathcal{S}_{\mathrm{score}}}}

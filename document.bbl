@@ -1,0 +1,82 @@
+\begin{thebibliography}{}
+
+\bibitem[El~Raheb et~al., 2019]{Raheb2019}
+El~Raheb, K., Stergiou, M., Katifori, A., and Ioannidis, Y. (2019).
+\newblock Dance interactive learning systems: A study on interaction workflow
+  and teaching approaches.
+\newblock {\em ACM Computing Surveys}, 52:1--37.
+
+\bibitem[Kim et~al., 2023]{app13042700}
+Kim, J.-W., Choi, J.-Y., Ha, E.-J., and Choi, J.-H. (2023).
+\newblock Human pose estimation using mediapipe pose and optimization method
+  based on a humanoid model.
+\newblock {\em Applied Sciences}, 13(4).
+
+\bibitem[Lei et~al., 2023]{leililiu2023dancemovement}
+Lei, P., Li, N., and Liu, H. (2023).
+\newblock Dance movement recognition based on gesture.
+
+\bibitem[Lin, 2015]{linjustdance}
+Lin, J.-H. (2015).
+\newblock Just dance: The effects of exergame feedback and controller use on
+  physical activity and psychological outcomes.
+\newblock {\em Games for Health Journal}, 4(3):183--189.
+\newblock PMID: 26182062.
+
+\bibitem[Oudah et~al., 2020]{oudah2020hand}
+Oudah, M., Al-Naji, A.~A., and Chahl, J. (2020).
+\newblock Hand gesture recognition based on computer vision: A review of
+  techniques.
+\newblock {\em Journal of Imaging}, 6:73.
+
+\bibitem[Protopapadakis et~al., 2018]{Protopapadakis2018dancepose}
+Protopapadakis, E., Voulodimos, A., Doulamis, A., Camarinopoulos, S., Doulamis,
+  N., and Miaoulis, G. (2018).
+\newblock Dance pose identification from motion capture data: A comparison of
+  classifiers.
+\newblock {\em Technologies}, 6.
+
+\bibitem[Rallis et~al., 2019]{trallis2019}
+Rallis, I., Protopapadakis, E., Voulodimos, A., Doulamis, N., Doulamis, A., and
+  Bardis, G. (2019).
+\newblock Choreographic pattern analysis from heterogeneous motion capture
+  systems using dynamic time warping.
+\newblock {\em Technologies}, 7(3):56.
+
+\bibitem[Tharatipyakul et~al., 2024]{THARATIPYAKUL2024e36589}
+Tharatipyakul, A., Srikaewsiew, T., and Pongnumkul, S. (2024).
+\newblock Deep learning-based human body pose estimation in providing feedback
+  for physical movement: A review.
+\newblock {\em Heliyon}, 10(17):e36589.
+
+\bibitem[T{\"o}lgyessy et~al., 2021]{tolgyessy2021skeletontracking}
+T{\"o}lgyessy, M., Dekan, M., and Chovanec, v. (2021).
+\newblock Skeleton tracking accuracy and precision evaluation of kinect v1,
+  kinect v2, and the azure kinect.
+\newblock {\em Applied Sciences}, 11(12):5756.
+
+\bibitem[Venkatrayappa et~al., 2024]{venkatrayappa2024survey3dhumanbody}
+Venkatrayappa, D., Tremeau, A., Muselet, D., and Colantoni, P. (2024).
+\newblock Survey of 3d human body pose and shape estimation methods for
+  contemporary dance applications.
+
+\bibitem[Yu and Xiong, 2019]{yuxiong2019}
+Yu, X. and Xiong, S. (2019).
+\newblock A dynamic time warping based algorithm to evaluate kinect-enabled
+  home-based physical rehabilitation exercises for older people.
+\newblock {\em Sensors}, 19(13):2882.
+\newblock PubMedID: 31261746.
+
+\bibitem[Zhang et~al., 2020]{zhangmediapipe}
+Zhang, F., Bazarevsky, V., Vakunov, A., Tkachenka, A., Sung, G., Chang, C.-L.,
+  and Grundmann, M. (2020).
+\newblock Mediapipe hands: On-device real-time hand tracking.
+\newblock {\em CoRR}.
+
+\bibitem[Zhao et~al., 2025]{ZHAO202566}
+Zhao, H., Du, B., Jia, Y., and Zhao, H. (2025).
+\newblock Danceformer: Hybrid transformer model for real-time dance pose
+  estimation and feedback.
+\newblock {\em Alexandria Engineering Journal}, 121:66--76.
+
+\end{thebibliography}

@@ -1,0 +1,139 @@
+% methodology.tex
+% Included by document.tex which already contains \chapter{Methodology}
+
+\section{Methodology}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{methodology.png}
+    \caption{Methodology Block Diagram}
+    \label{fig:methodology_flowchart}
+\end{figure}
+
+\subsection{Methodology Overview}
+This project develops a desktop real-time pose-estimation application for Tinikling learning. The pipeline comprises (1) dataset collection and annotation, (2) real-time landmark detection using MediaPipe with OpenCV preprocessing, (3) model robustness improvements via augmentation and fine-tuning, (4) a per-segment scoring and feedback engine, and (5) system evaluation and user studies for performance and usability.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{methoddia.png}
+    \caption{System Diagram of the Real-time Tinikling Learning Application}
+    \label{fig:system}
+\end{figure}
+
+% --- Methodology table: single-spaced, multi-page longtable with objectives/methods/locations ---
+\renewcommand{\arraystretch}{1.0} % tighten vertical spacing
+\setlength{\tabcolsep}{6pt}      % tighten horizontal padding
+
+\begin{SingleSpace}
+\begin{longtable}{|p{0.20\textwidth}|p{0.64\textwidth}|p{0.12\textwidth}|}
+\caption{Summary of methods for reaching the objectives}
+\label{tab:methods_per_objective} \\
+
+\hline
+\textbf{Objectives} & \textbf{Methods} & \textbf{Locations} \\ \hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Objectives} & \textbf{Methods} & \textbf{Locations} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\hline
+\textbf{GO:} To develop a real-time pose estimation-based Tinikling learning application. &
+\begin{enumerate}
+  \item Develop a desktop application integrating pose estimation, scoring, and feedback modules.
+  \item Utilize MediaPipe + OpenCV for pose detection, integrated with a GUI framework.
+  \item Document architecture, usage, and installation following software engineering practices.
+\end{enumerate}
+& N/A \\ \hline
+
+\textbf{SO1:} To develop a real-time pose estimation pipeline that captures dancers' movements using a webcam, detects key skeletal landmarks, and analyzes Tinikling steps with $\geq 30$ fps processing speed and $\geq 90\%$ detection accuracy. &
+\begin{enumerate}
+  \item Use MediaPipe Pose for skeletal landmark detection in real time.
+  \item Optimize frame processing via OpenCV preprocessing and efficient landmark extraction.
+  \item Evaluate detection accuracy using collected test sequences and performance metrics.
+\end{enumerate}
+& $\geq 90\%$ detection accuracy; 30 fps \\ \hline
+
+\textbf{SO2:} To make the pose estimation model robust to lighting, background clutter, and user variation through dataset collection and augmentation, while maintaining minimum pose detection accuracy of $85\%$. &
+\begin{enumerate}
+  \item Collect / create Tinikling dance videos under diverse lighting, backgrounds, and performer variations.
+  \item Apply data augmentation (photometric, geometric, synthetic occlusions).
+  \item Retrain / fine-tune the model and evaluate on a validation set to quantify improvements.
+\end{enumerate}
+& $\geq 85\%$ detection accuracy \\ \hline
+
+\textbf{SO3:} To design and integrate a scoring and feedback system that aligns poses with reference choreographies, provides numerical scores (0--100) and step-by-step accuracy breakdown within $\leq 1$\,s after performance. &
+\begin{enumerate}
+  \item Implement per-segment accuracy scoring (DTW or constrained alignment + local spatial metrics).
+  \item Build a choreography reference library with segmented Tinikling steps for alignment.
+  \item Integrate UI feedback: immediate cues and post-performance breakdown.
+\end{enumerate}
+& Score range 0--100; feedback latency $\leq 1$\,s \\ \hline
+
+\textbf{SO4:} To evaluate the system's performance and usability through controlled testing with at least 10 participants, measuring pose estimation accuracy, latency, and user satisfaction ($\geq 80\%$ positive feedback). &
+\begin{enumerate}
+  \item Conduct user testing sessions with participants performing choreographed sequences.
+  \item Measure pose estimation accuracy, system latency, and feedback timing.
+  \item Compile results into an evaluation report with recommendations for refinement.
+\end{enumerate}
+& $n \geq 10$ participants; $\geq 80\%$ positive feedback \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+% --- end methodology table ---
+
+
+\subsection{Dataset Collection and Annotation}
+We collect Tinikling performances using consumer webcams across varied environments (lighting, backgrounds, participant clothing). Each recording is annotated with segment boundaries and ground-truth reference trajectories for the core Tinikling steps. Annotation files follow a simple CSV schema: frame index, timestamp, keypoint coordinates (x,y[,z if available]), and segment label.
+
+\subsection{Real-time Pipeline (Implementation)}
+The real-time pipeline components:
+\begin{enumerate}
+    \item \textbf{Capture \& Preprocessing:} Acquire frames from webcam at target frame rates; apply resizing, color normalization, and optional background subtraction using OpenCV.
+    \item \textbf{Landmark Detection:} Run MediaPipe Pose to extract 2D/3D keypoints; post-process landmarks (smoothing, confidence thresholding).
+    \item \textbf{Segmentation \& Alignment:} Detect segment boundaries (simple heuristics or learned segment classifier), then align performed segment to reference via DTW or constrained alignment.
+    \item \textbf{Scoring \& Feedback:} Compute per-joint and per-segment metrics; convert distances to 0--100 scores, present instant cues (visual/audio) and detailed breakdowns in UI.
+    \item \textbf{Logging \& Persistence:} Save session logs, computed metrics, and anonymized recordings for later analysis.
+\end{enumerate}
+
+\subsection{Model Robustness and Training}
+To improve robustness:
+\begin{itemize}
+    \item Augment datasets with photometric (brightness/contrast), geometric (rotation, scale), and synthetic occlusion transforms.
+    \item Perform k-fold validation and ablation studies to measure the effect of augmentations.
+    \item Where appropriate, fine-tune a lightweight backbone (e.g., MediaPipe-compatible network) or add a small temporal refinement network (multi-frame fusion) for increased temporal stability.
+\end{itemize}
+
+\subsection{Scoring, Calibration, and UX}
+Scoring converts aligned distances into interpretable percentages per segment:
+\[
+\text{score} = 100 \times \max\!\left(0, 1 - \frac{\text{normalized\_error}}{\text{threshold}}\right)
+\]
+Calibration includes per-user baseline capture (neutral stance and sample steps) to normalize per-joint tolerances. UI design emphasizes low-latency cues for learning (immediate feedback) and a post-run breakdown for correction.
+
+\subsection{Evaluation Plan}
+\begin{enumerate}
+    \item \textbf{Automated metrics:} Detection accuracy (\%), MPJPE where available, processing fps, latency (ms).
+    \item \textbf{User study:} $n\geq 10$ participants performing a standardized Tinikling routine; questionnaires to measure perceived accuracy, ease-of-use, and satisfaction. Target: $\geq 80\%$ positive feedback.
+    \item \textbf{Robustness tests:} Evaluate under varied lighting, occlusion, and viewpoint conditions; measure drop in accuracy and suggest mitigations.
+    \item \textbf{Report:} Compile results, run statistical tests where applicable, and provide actionable recommendations.
+\end{enumerate}
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Desktop application with installer and README (architecture, usage, install).
+    \item Annotated dataset subset and reference choreography library.
+    \item Evaluation report including metrics, user-study results, and recommendations.
+    \item Source code release and simple reproducibility instructions.
+\end{itemize}
+
+\section{Summary}
+This methodology outlines a practical pipeline to build and evaluate a real-time Tinikling learning tool: dataset creation, MediaPipe-based real-time detection with OpenCV optimizations, augmentation and fine-tuning for robustness, DTW-based alignment and scoring, and human-subject evaluation for usability and performance validation.
+
+% end of methodology.tex

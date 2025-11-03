@@ -1,0 +1,226 @@
+% Introduction chapter (edited)
+
+\section{Background of the Study}
+
+Classical \acr{CV} approaches used skin color segmentation, contour analysis, optical flow, and handcrafted descriptors (\acr{HOG}, motion history images) to detect and classify gestures. Despite being simple and interpretable, those methods struggle with background variation and scale. The deep-learning era replaced handcrafted features with \acr{CNN}s that learn hierarchical visual features directly from image data, yielding much higher accuracy for static hand-pose and short-sequence recognition tasks. Many recent capstone and journal implementations pair \gls{OpenCV} (for capture/preprocessing) with \acr{CNN} built and trained in TensorFlow/PyTorch to recognize a fixed vocabulary of gestures in real time. These hybrid pipelines are practical for capstone projects because OpenCV handles efficient frame processing while \acr{CNN}s provide generalization across users and backgrounds. Furthermore, \gls{Operational Technologies} plays a crucial role in deploying these systems in real-world applications where physical devices and processes are monitored and controlled, such as in industrial automation or building management systems, which benefit from enhanced gesture recognition. \citep{oudah2020hand}
+
+Instead of classifying raw images, several high-performance systems first extract skeletal landmarks (e.g., MediaPipe’s 21-point hand model) and feed those coordinates to a classifier (small CNN, MLP, or temporal model like LSTM). Landmark-based pipelines reduce sensitivity to background and scale and make models smaller and faster, which is ideal for mobile or AR deployment. Markerless commercial devices such as the Leap Motion Controller and \gls{Ultraleap} cameras provide very accurate 3D joint data using IR illumination and multi-camera setups; those give superior fidelity but add hardware cost and integration work. For a capstone aiming at broad deployability, a practical approach is to prototype with MediaPipe + OpenCV + CNN (or lightweight temporal model) and consider Ultraleap integration later for high-precision installations. \citep{zhangmediapipe}
+
+\section{Prior Studies}
+
+Prior research on the topic at hand  has shown substantial progress in the integration of pose estimation, computer vision, and interactive technologies for the sake of movement-based learning. 
+For instance, a study by \citet{app13042700} presents a human pose estimation method which integrates MediaPipe Pose with additional optimization techniques in order to improve its accuracy and robustness. The designed framework is capable of real-time landmark detection through the use of only a single RGB camera, while optimization methods such as smoothing filters and Kalman filtering are used to reduce jitter and improve the temporal consistency. Results depicted a high detection accuracy for various body parts, with its performance remaining stable under varying lighting and background. This shows MediaPipe’s suitability for real-time applications where both speed and stability is crucial, especially in aspects such as gesture recognition, sports monitoring, and motion analysis.
+\citet{THARATIPYAKUL2024e36589} explores various deep learning-based human pose estimation techniques and their applications in health, rehabilitation, and human motion analysis. The paper looks into both 2D and 3D pose estimation. It is noted that 2D methods are widely used for real-time applications as they have much lower computational requirements in comparison to 3D. Deep convolutional neural networks and transformer-based models proved to significantly improve the landmark localization accuracy in comparison to classical approaches. Ultimately, the paper emphasized that integrating temporal information enhances performance in sequential movement tasks, making these methods highly relevant for motion learning, sports training, and interactive systems.
+\citet{Raheb2019} focuses on interactive dance learning systems and how such technology has the potential to support dance pedagogy through utilizing real-time feedback and structured interaction workflows. Multiple systems were analyzed and, afterwards, a framework was perfected which made use of motion capture, real-time analysis, and visual feedback in order to support users, who are both learners and instructors. Key interaction patterns were identified such as mirroring, guidance, and correction, which enhances the overall learning experience and, in turn, effectiveness. It also looks into usability considerations such as responsiveness, clarity of feedback, and alignment with existing teaching approaches, which is relevant to the creation of dance learning systems.
+Ultimately, such studies depict the intersection of  pose estimation, feedback systems, and immersive interfaces, which lays a strong groundwork for future developments in digital dance education and interactive movement learning systems.
+
+
+
+\section{Problem Statement}
+
+To this day, the national dance of the Philippines known as ‘Tinikling’ continues to hold cultural significance among students, educators, and dance enthusiasts. However, despite its importance, those that aspire to learn the dance lack access to physical classes or qualified instructors be it due to geographical or time constraints. Existing methods of learning may be costly or unable to provide feedback to the student in real-time, which makes the learning process difficult for individuals in terms of practicing effectively on their own. Such a gap highlights the need for a much more accessible, interactive, and accurate tool which would be able to guide learners remotely in an efficient manner and, ultimately, ensuring that tradition is preserved and passed on to future generations. 
+
+
+\begin{enumerate}
+    \item \textbf{PS1: }
+    \begin{itemize}
+        \item The ideal scenario for our intended audience (students, educators, and dance enthusiasts) is to have an intuitive and interactive learning tool that facilitates the practice of Tinikling, the traditional Filipino dance. This tool should provide real-time feedback on users' dance movements, enabling them to learn and improve their technique. The desired state includes accessibility to the tool on various devices (e.g., desktop, mobile) with a user-friendly interface and a high level of accuracy in tracking the dance steps. Additionally, it should support personalized feedback, enabling users of all skill levels to progress and feel engaged in learning this cultural heritage.
+    \end{itemize}
+    
+    \item \textbf{PS2:}
+    \begin{itemize}
+        \item Currently, learning Tinikling requires access to physical dance classes or instructors, which are often limited by geographical location, financial resources, or time constraints. For individuals unable to attend such classes, the lack of affordable and effective learning tools becomes a significant barrier. Additionally, existing dance-learning technologies are either costly, relying on specialized hardware, or lack the immediacy of real-time feedback, making it difficult for learners to practice and perfect their movements without direct instructor guidance.
+        \item The pain point is that students who want to practice Tinikling at home or in remote areas are unable to receive real-time guidance or feedback, leading to slower progress, incorrect technique, and a loss of motivation.
+    \end{itemize}
+    
+    \item \textbf{PS3: }
+    \begin{itemize}
+        \item Without a tool that offers immediate feedback and a clear learning path, students practicing Tinikling on their own are likely to struggle with incorrect movements, which may lead to frustration. Over time, this lack of progress could result in a lack of confidence, disengagement from the learning process, and ultimately, the inability to learn the dance correctly. Furthermore, the absence of accessible learning tools risks the loss of cultural knowledge and the fading of the Tinikling tradition, especially among younger generations who may not have easy access to traditional learning methods.
+    \end{itemize}
+\end{enumerate}
+
+\section{Objectives and Deliverables}
+
+\subsection{General Objective (GO)}
+\begin{itemize}
+	\item \Copy{GO}{GO: To design and implement a real-time \gls{Pose estimation}-based Tinikling learning application;}
+\end{itemize}
+
+\subsection{Specific Objectives (SOs)}
+
+\begin{itemize}
+	\item \Copy{SO1}{SO1: To develop a real-time pose estimation pipeline that captures dancers’ movements using a webcam, detects key skeletal landmarks, and analyzes Tinikling steps with at least 30 frames per second (fps) processing speed and $\geq 90\%$ detection accuracy.;};
+	
+	\item \Copy{SO2}{SO2: To make the pose estimation model robust to lighting, background clutter, and user variation through dataset collection and augmentation and, landmark-based representations while maintaining a minimum pose detection accuracy of 85\% };
+	
+	\item \Copy{SO3}{SO3: To design and integrate a scoring and feedback system that evaluates user performance by aligning poses with reference choreographies, providing numerical scores (0--100) and step-by-step accuracy breakdown within 1 second after performance.};
+	
+	\item \Copy{SO4}{SO4: To evaluate the system’s performance and usability through controlled testing with at least 10 participants, measuring pose estimation accuracy, latency, and user satisfaction ($\geq 80\%$ positive feedback) using standardized questionnaires and performance metrics.};
+\end{itemize}
+
+%% Replace the existing "Expected Deliverables" block with this code.
+\subsection{Expected Deliverables}
+
+\begin{table}[!htbp]
+\caption{Expected Deliverables per Objective}
+\label{tab:expected_deliverables}
+\centering
+\scriptsize
+\begin{tabular}{p{0.25\textwidth}|p{0.7\textwidth}}
+\hline\hline
+\textbf{Objectives} & \textbf{Expected Deliverables} \\ 
+\hline
+GO: To design and implement a real-time \gls{Pose estimation}-based Tinikling learning application &
+\begin{minipage}[t]{\linewidth}
+  \begin{itemize}
+    \item Prototype of Tinikling learning application.
+    \item Documentation and user manual.
+  \end{itemize}
+\end{minipage} \\ 
+\hline
+
+SO1: To develop a real-time pose estimation pipeline that captures dancers’ movements using a webcam, detects key skeletal landmarks, and analyzes Tinikling steps with at least 30 frames per second (fps) processing speed and $\geq 90\%$ detection accuracy. &
+\begin{minipage}[t]{\linewidth}
+  \begin{itemize}
+    \item Optimized skeletal keypoints detection for Tinikling steps.
+    \item Implementation of webcam-based pose estimation pipeline.
+    \item Performance evaluation results.
+  \end{itemize}
+\end{minipage} \\ 
+\hline
+
+SO2: To make the pose estimation model robust to lighting, background clutter, and user variation through dataset collection and augmentation and, landmark-based representations while maintaining a minimum pose detection accuracy of 85\% &
+\begin{minipage}[t]{\linewidth}
+  \begin{itemize}
+    \item Augmented dataset covering varied lighting, backgrounds, and user types.
+    \item Enhanced landmark-based model with robustness improvements.
+    \item Comparative performance evaluation report.
+  \end{itemize}
+\end{minipage} \\ 
+\hline
+
+SO3: To design and integrate a scoring and feedback system that evaluates user performance by aligning poses with reference choreographies, providing numerical scores (0--100) and step-by-step accuracy breakdown within 1 second after performance. &
+\begin{minipage}[t]{\linewidth}
+  \begin{itemize}
+    \item Scoring and feedback algorithm.
+    \item Tinikling choreography database.
+    \item Post-performance scoring output with accuracy metrics.
+  \end{itemize}
+\end{minipage} \\ 
+\hline
+
+SO4: To evaluate the system’s performance and usability through controlled testing with at least 10 participants, measuring pose estimation accuracy, latency, and user satisfaction ($\geq 80\%$ positive feedback) using standardized questionnaires and performance metrics. &
+\begin{minipage}[t]{\linewidth}
+  \begin{itemize}
+    \item Conducted controlled testing with participants.
+    \item Collected performance and usability metrics.
+    \item Evaluation report with recommendations for improvement.
+  \end{itemize}
+\end{minipage} \\ 
+\hline
+
+
+\end{tabular}
+\end{table}
+
+
+\clearpage
+
+\section{Significance of the Study}
+
+This capstone project focuses on the development of a Tinikling learning application through the integration of pose estimation and human action recognition. The setup consists of a webcam, laptop, and two bamboo sticks for the Tinikling dance. Such a setup offers affordability and accessibility benefits for users. Ultimately, it contributes to the field of both pose estimation and human action recognition by demonstrating a successful integration of the two in a live setup.
+
+\subsection{Technical Benefit}
+\begin{enumerate}
+\item Enables real-time pose estimation and post-performance feedback, improving accuracy and efficiency throughout the learning process. 
+\item Low-cost software-based learning tool which uses a webcam and desktop computer rather than expensive motion capture equipment.
+\end{enumerate}
+
+\subsection{Social Impact}
+\begin{itemize}
+  \item Promotes cultural preservation by making Tinikling more accessible through interactive applications.
+  \item Increases student engagement and participation via gamified learning.
+  \item Supports remote or in-classroom instruction by enabling technology-assisted dance education.
+\end{itemize}
+
+\subsection{Environmental Welfare}
+\begin{itemize}
+  \item Utilizes existing and widely available hardware such as webcams and desktop computers rather than new specialized equipment, which ultimately lessens electronic waste.
+  \item Encourages digital preservation of cultural heritage, lessening reliance on physical materials or infrastructure.
+\end{itemize}
+
+\section{Assumptions, Scope, and Delimitations}
+
+\subsection{Assumptions}
+\begin{enumerate}
+\item Pose landmarks from webcams with standard RGB resolutions such as 720p, 1080p, and 4K or low-cost depth sensors provide sufficient fidelity to represent Tinikling movements for temporal alignment and scoring.
+\item Choreography can be divided into short, labeled segments that enable reliable matching and targeted feedback.
+\item Dynamic Time Warping or a constrained variant will handle tempo variation robustly for temporal alignment.
+\item A brief per-user calibration step will improve scoring consistency.
+\end{enumerate}
+
+\subsection{Scope}
+\begin{enumerate}
+\item Cover automatic pose estimation, sequence alignment, and segment-level scoring for Tinikling.
+\item Accept landmark or depth inputs and provide immediate on-device cues during performance.
+\item Produce a higher-precision final score after a more detailed pass.
+\item Use self-sourced Tinikling videos for model training when no public dataset exists.
+\item Benchmark against general dance datasets where appropriate.
+\item Report sensor-based metrics and simple user measures such as perceived accuracy and engagement.
+\end{enumerate}
+
+\subsection{Delimitations}
+\begin{enumerate}
+\item Will not perform detailed facial or hand mesh reconstruction.
+\item Will not replace multi-camera motion capture for research-grade kinematics.
+\item Will not guarantee reliable results under heavy occlusion, very low light, extreme off-axis views, or when clothing blends with the background.
+\item Will not attempt full generalization to all body shapes without additional data and tuning.
+\item Limits reflect known sensor and algorithm constraints and the aim to produce a practical, lightweight prototype.
+\end{enumerate}
+
+\section{Description and Methodology of the \documentType}
+
+\begin{enumerate}
+\item Phase 1: Model Development serves as a precursor for Phase 2 wherein the specifics of the model, libraries, and environment to use are defined. In total, Phase 1 would last 4 weeks spanning from week 4 to 7. The bulk of the research for the project would be carried out during this phase. The dataset to be used for training would be collected during this phase as well.
+\item Phase 2: Model Training consists of training the model using the dataset collected in the previous phase. This phase will largely consist of testing and improving the resulting model. Tests would be conducted using the group members as dancers. This phase also includes the optimization of the model for real-time detection simultaneously with the music. In total, this phase would last 4 weeks spanning from week 8 to 11.
+\item Phase 3: UI/UX Development consists of the integration of the trained model with a user interface. Once integrated final testing and refinement of the final program would be carried out. The final output would be presented as well during this phase along with the finalization of the documentation. This phase would last for 3 weeks spanning from week 11 to 13.
+\end{enumerate}
+
+\ifFinished
+\else
+
+\section{Estimated Work Schedule and Budget}
+
+\subsection{Milestones and Gantt Chart}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{CPECAPS.png}
+\caption{Milestone Gantt Chart for Real-time Pose Estimation Dance Software}
+\label{fig:MilestoneGanttChart}
+\end{figure}
+
+\subsection{Budget}
+Given that the capstone project largely consists of software, apart from the use of a laptop for both programming, as well as actual implementation and usage of the dance program, the only expense to consider would be for that of a Webcam, which is already owned. 
+
+\begin{table}[h]
+\centering
+\caption{Operational Financial Plan}
+\begin{tabular}{|l|r|}
+    \hline
+    \textbf{Item} & \textbf{Price} \\ \hline
+    Webcam  & ₱1,850 \\ \hline
+    4pc. Tinikling Sticks  & ₱110 \\ \hline
+    \textbf{Total} & \textbf{₱1,960} \\ \hline
+\end{tabular}
+\end{table}
+
+\ifPhD
+\section{Publication Plan}
+\graytx{\blindtext}
+\fi
+
+\fi
+
+\section{Overview of the \documentType}
+
+This capstone project focuses on developing a real-time pose estimation-based learning application for \gls{Tinikling}, the Philippine national dance. It integrates computer vision and machine learning techniques in order to create an interactive learning platform that provides performance scoring to users. The project utilizes webcams and \gls{MediaPipe}-based skeletal landmark extraction to analyze users’ movements relative to reference choreography. Unlike expensive motion capture systems, this setup uses low-cost and accessible hardware, making the system practical for classroom, cultural, and home use. The system emphasizes cultural preservation by modernizing Tinikling education through technology. It enables students to learn and practice the dance interactively, provides technical benefits such as real-time feedback without costly sensors, and supports social and environmental goals through cultural engagement and sustainable use of existing hardware.

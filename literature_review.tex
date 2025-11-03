@@ -1,0 +1,104 @@
+
+\section{Existing Work}
+
+A study by \citet{venkatrayappa2024survey3dhumanbody} focused on surveying the various existing 3D human body pose and shape estimation techniques, given its crucial nature in fields such as augmented or virtual reality, healthcare and fitness technology, and virtual retail. The solutions explored consisted of mainly three types of inputs, which were single images, multi-view images, and videos. Various issues pertaining to dance, such as fast motion, occlusion, and unusual poses were analyzed to see how each affected the performance of each method. The specific models consisted of SMPL -A, SMPL -X, MANO, STAR, FLAME, which are optimization-based models, as well as HMR, VIBE, SPIN, PARE, EXPOSE, and PHALP, which are deep learning-based models. 
+SMPL was found to be beneficial in terms of realistic body representation, efficiency for real time applications, and wide availability, however it has limitations in areas pertaining to facial and hand modeling, as well as representation of ethnic diversity. 
+SMPL -X proved to provide several advantages such as facial expressions, hand gestures, and improved expressiveness. Its limitations, however, consisted of simplified hand modeling and its limited pose variability. 
+MANO offers detailed hand gesture modeling and realistic hand deformations, but has limitations due to its focus being exclusively on the modeling of hands, as well as computational challenges. 
+STAR leverages sparse coding and temporal modeling, which allowed for a much more powerful framework for pose estimation., depicting state-of-the-art results throughout various benchmarks and practical implementations in sports analysis, human-computer interaction, and VR. 
+FLAME was advantageous when it comes to computational efficiency, which made it suitable for real-time applications of pose estimation. As for its limitations, it primarily focuses on facial and lip modeling, which introduces complexity and potential computational challenges. MANO.
+HMR produces richer and more useful mesh representation, which is parameterized by shape and 3D joint angles. The network implicitly learns the angle limits of each joint. As such its use is discouraged for people with unusual body shapes. Its re-projection loss is highly under-constrained and it needs adversarial supervision in order to avoid unrealistic outputs. 
+VIBE makes use of CNNs, RNNs and GANs, as well as a self-attention layer in order to achieve state-of-the-art results. A motion discriminator is used to help produce more realistic motion. Ultimately, the model is a standard SMPL body model format with sequences of poses and shape parameters. 
+SPIN makes use of a self improving loop wherein better fits allow the network to train in a much more efficient manner while b.etter initial estimates from the network aids the optimization routine in order to result in better fits. 
+	PARE consists of a guided attention mechanism which exploits information on visibility of individual body parts all the while leveraging information from neighboring body parts in order to predict parts which are occluded. 
+EXPOSE includes body, face, and hand estimation. It is able to estimate expressive 3D humans in a much more accurate manner in comparison to existing optimization methods at only a fraction of the computational costs. 
+PHALP out performes all of the aforementioned methods. Despite this, it still has its limitations as well such as its reliance on a single camera, which may lead to issues such as occlusion and motion blur. It may also not work well in low-light conditions or when a person's clothes is a similar color to that of the background. Lastly, it also requires a significant amount of computational resources, which may make it not suitable for real-time applications. 
+
+A study by \citet{Protopapadakis2018dancepose}, analyzes the effectiveness of various classification techniques in  recognizing different dance types based on motion-capture skeleton data. Classifiers explored consisted of k-Nearest Neighbors (k-NN), Naïve Bayes, Discriminant Analysis, Classification Trees, Random Forests (TreeBagger), Support Vector Machines (SVMs), and Ensemble Classifiers. Poses are identified through the use of body joints via Kinect sensor. The data set used consisted of various dances such as Enteka, Kalamatianos, Syrtos (Two-beat), Sytros (Three-beat). The kinect was used to capture skeletal joining data, to which feature extraction techniques such as principal component analysis and frame differencing were used in order to improve the classification accuracy. Ultimately, results showed that k-nearest neighbors and random forests are the best-performing classifiers among those that were explored. It was also proposed that the use of mulit-sensor or multimodal data may serve as a potential solution for issues specific to pose recognition in dance such as occlusion and complex movement patterns. 
+
+	A study by \citet{ZHAO202566}, looks into dance pose estimation and introduces the model DanceFormer. DanceFormer is a transformer-based model for dance pose estimation which makes use of the Vision Transformer, Time Series Transformer, and an edge computation layer in order to achieve a deep fusion of multimodal features and to overall increase its accuracy and real-time performance. The AIST and DanceTrack datasets were used throughout the experimentation. Results showed that DanceFormer out performs other models, with it achieving a pose estimation accuracy or MPJPE of 18.4mm and 20.1mm, as well as a multi-object tracking accuracy or MOTA of 92.3\% and 89.5\%. It is also suitable for real-time processing in even low-resource with an average latency of 35.2ms. Ultimately, it serves as an efficient, precise and real time solution for rather complex dance scenarios. It also has applications in a much more broad sense be it in dance education or in real-time motion analysis. 
+
+	A study by \citet{leililiu2023dancemovement} discusses dance movement recognition based on gesture. A low accuracy traditional dance movement recognition algorithm based on human posture estimation was proposed. PAFs algorithm was used in order to recognize the spatial skeleton nodes and connections of joints in the human body. The pose of the body is estimated based on the movement of the spatial skeleton. Once the information on the detected posture is preprocessed and its features are extracted, LTSM time series algorithm was used in order to classify and recognize certain dance movements. Ultimately, results showed that the proposed algorithm has the capacity to reliably identify dance movements based on the skeleton nodes. It was able to achieve a recognition accuracy and recall rate upwards of 85\% for the different movement categories. As for its recognition accuracy of curtsey movement, it achieved upwards of 95.2\%. 
+
+
+
+\citet{tolgyessy2021skeletontracking} present a detailed evaluation of Kinect v1, Kinect v2, and Azure Kinect skeleton tracking, analyzing joint-level error distributions and repeatability across distances and orientations. Their results highlight degradation in accuracy under occlusion, off-axis angles, and larger working distances, conditions typical of casual living-room dance setups. The findings underline both the potential and the limits of Kinect-class sensors, suggesting that practical applications often require either sensor fusion and smoothing to handle jitter or a focus on more reliable joints for robust real-time scoring.
+
+\citet{linjustdance} investigate how interactive feedback design influences user motivation in the context of Just Dance. Their study demonstrates that timely, clear cues significantly improve engagement, perceived competence, and sustained participation, with direct effects on physical activity outcomes. These findings show that feedback modalities and latency are as critical as recognition accuracy in shaping the player experience, emphasizing the importance of immediate, multimodal responses in dance or pose-based teaching applications.
+
+\citet{yuxiong2019} propose and validate a Dynamic Time Warping method for evaluating rehabilitation exercises tracked with Kinect. Their algorithm successfully aligns noisy, tempo-varying motion with reference trajectories, producing reliable correctness scores even with partial occlusion. Applied to dance or short choreographies, DTW offers a robust foundation for handling tempo shifts and timing variation, supporting sequence-based scoring that is more forgiving than strict frame-to-frame comparison.
+
+
+\citet{trallis2019} compare Kinect II with the high-precision Vicon system in the context of choreography retrieval and analysis, using trajectory similarity measures such as DTW. While Kinect data contain noise and smoothing artifacts, the study shows that trajectory-level patterns remain useful when algorithms are designed to tolerate sensor bias. Their results support the use of low-cost consumer sensors, including RGB landmark pipelines, in applications where robust temporal alignment and trajectory modeling can offset hardware limitations.
+
+Human pose estimation (HPE) has become an important area of study due to its applications in action recognition, sports, and performing arts. Xu, Zou, and Lin (2022) introduced the Adaptive Hypergraph Neural Network (AD-HNN), which captures high-order semantic dependencies among joints to improve multi-person pose estimation, particularly in handling occlusion and pose variability. In dance analysis, Ju (2025) applied deep learning with ResNet-152 and HR-Net to enhance dance pose recognition, addressing class imbalance and improving classification accuracy through global–local feature fusion.
+
+For cultural preservation, motion capture (MoCap) has been widely adopted. Rizhan et al. (2025) demonstrated the use of MoCap to develop authentic motion templates for Malay folk dances, ensuring accuracy and authenticity in preserving intangible cultural heritage. In addition, Büyükgökoğlan and Uğuz (2025) developed a performance evaluation system for Turkish folk dances using deep learning–based pose estimation (e.g., Mediapipe, YOLO, LSTM), enabling objective assessment compared to traditional jury scoring.
+\renewcommand{\arraystretch}{1.0} % reduce vertical spacing in table
+\setlength{\tabcolsep}{4pt} % tighten horizontal spacing
+
+\begin{SingleSpace}
+\AtBeginEnvironment{longtable}{\tiny}
+\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\caption{Summary of Reviewed Dance Pose Estimation and Recognition Studies} \label{tab:dance_studies} \\
+
+\hline
+\textbf{Paper} & \textbf{Focus} & \textbf{Methodology} & \textbf{Results} \\ \hline
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries Table \thetable\ (continued)}} \\
+\hline
+\textbf{Paper} & \textbf{Focus} & \textbf{Methodology} & \textbf{Results} \\ \hline
+\endhead
+
+\hline \multicolumn{4}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\emph{Venkatrayappa et al. (2024)} & Evaluates 3D human pose \& shape estimation techniques for dance & PHALP (multi-frame 3D pose estimation) & N/A \\ \hline
+
+\emph{Protopapadakis et al. (2018)} & Identifies dance types using skeletal data & k-NN classifier on PCA-reduced Kinect skeleton features & Accuracy = 0.52 \\ \hline
+
+\emph{Zhao et al. (2025)} & Seeks accurate, real-time pose estimation for complex dances & Hybrid Vision + Time-Series Transformer (DanceFormer) & MPJPE = 18.4/20.1\,mm; MOTA = 92.3\% / 89.5\%; Latency = 35.2\,ms \\ \hline
+
+\emph{Lei et al. (2023)} & Improves low-accuracy traditional-dance recognition methods & PAF-based keypoint detection + LSTM classifier & \(>\)85\% overall; 95.2\% (curtsey) \\ \hline
+
+\emph{Ju (2025)} & Proposes deep-learning methods to design \& recognize dance poses & ResNet-152 + HRNet (global--local feature fusion) & Accuracy = 0.9870; Precision = 0.9851; Kappa = 0.9841 \\ \hline
+
+\emph{Xu et al. (2022)} & Estimates multiple human poses from single images using an adaptive structure & Adaptive Hypergraph Neural Network (AD-HNN) & AP = 76.6\% (COCO) \\ \hline
+
+\emph{T\"olgyessy et al. (2021)} & Evaluates joint-level accuracy and repeatability across Kinect sensors & Kinect V1 / V2 / Azure skeleton-tracking evaluation & Std.\ Dev.\ = 0.8--1.9\,mm; Joint misses = 15--30\% \\ \hline
+
+\emph{Yu \& Xiong (2019)} & DTW-based scoring for Kinect-based rehabilitation/exercise & DTW-based scoring of Kinect-derived skeleton motions & Pearson \(r = 0.86\) \\ \hline
+
+\emph{Rallis et al. (2019)} & Choreography pattern analysis (Kinect vs Vicon) & DTW trajectory matching (Kinect II vs Vicon) & N/A \\ \hline
+
+\emph{Sun \& Song (2025)} & Pose estimation in complex dance scenes & Improved HRNet + CBAM attention + multi-scale fusion & Accuracy = 73.5\% (MPII); 79.5\% (dance dataset) \\ \hline
+
+\emph{B\"uy\"ukg\"okoglan \& U\u{g}uz (2025)} & Deep-learning–based scoring for Turkish folk dance & MediaPipe / YOLO pose extraction + LSTM scoring & LSTM = 68.43 (MSE = 56.11); DTW = 60.64 (MSE = 139.32) \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+
+\section{Lacking in the Approaches}
+
+These studies show the potential of pose estimation and deep learning for advancing both modern dance movement design and traditional folk dance preservation. However, there is little to no research in the Philippines that applies pose estimation to folk dances—particularly Tinikling—representing a significant gap and opportunity for future exploration. 
+
+% \begin{itemize}
+% 	\item mentioning the problem
+% 	\item showing how your solution is better (can be better (for proposals))
+% \end{itemize}
+
+
+
+\section{Summary}
+
+Research on human pose estimation (HPE) spans multiple applications including AR/VR, healthcare, and dance. Optimization- and deep learning–based models (e.g., SMPL, SMPL-X, HMR, VIBE, SPIN, PARE, EXPOSE, PHALP) have been studied for realistic 3D body reconstruction (Venkatrayappa et al., 2024). Dance classification has been explored using skeleton data and machine learning classifiers like k-NN and Random Forest (Protopapadakis et al., 2018). Transformer-based models such as DanceFormer achieve high accuracy and real-time performance in dance pose estimation (Zhao et al., 2025), while PAF- and LSTM-based algorithms improve movement recognition (Lei et al., 2023). Kinect studies reveal both potential and limits in low-cost motion capture (Tölgyessy et al., 2021; Rallis et al., 2019), while feedback and sequence-alignment approaches (Lin et al., 2015; Yu \& Xiong, 2019) highlight the importance of interactivity and temporal robustness.
+
+Recent work integrates advanced neural networks for pose estimation, such as adaptive hypergraphs (Xu et al., 2022), deep feature fusion for dance poses (Ju, 2025), MoCap for authentic folk dance templates (Rizhan et al., 2025), and deep learning systems for evaluating Turkish folk dance (Büyükgökoğlan \& Uğuz, 2025).
+
+
+

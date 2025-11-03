@@ -1,0 +1,125 @@
+% results_and_discussions.tex
+% Included by document.tex which contains the \chapter{Results and Discussions}
+
+% Included by document.tex which contains the \chapter{Results and Discussions}
+\label{ch:result_discuss}
+
+\section{Leg Landmark Detection Results}
+
+The implementation of the leg tracking system successfully demonstrates the capability to detect and track key anatomical landmarks on the lower extremities. Figure \ref{fig:leg_landmark} illustrates the detected landmarks overlaid on the leg region, showing the system's ability to identify critical points such as the hip, knee, and ankle joints.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{legtracker.png}
+    \caption{Leg Landmark Estimation showing detected keypoints on lower extremities}
+    \label{fig:leg_landmark}
+\end{figure}
+
+The landmark detection forms the foundation for subsequent gait analysis, as these keypoints enable the calculation of joint angles, stride length, and other biomechanical parameters essential for assessing walking patterns.
+
+\section{Training Dataset}
+
+The training dataset comprises video frames captured from various walking scenarios to ensure robust model performance across different conditions. Figures \ref{fig:train_sample_1} through \ref{fig:train_sample_3} present representative samples from the training dataset, demonstrating the diversity of poses, lighting conditions, and perspectives included in the model training process.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{frame_000223.jpg}
+    \caption{Training data sample}
+    \label{fig:train_sample_1}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{frame_000225.jpg}
+    \caption{Training data sample demonstrating }
+    \label{fig:train_sample_2}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{frame_000226.jpg}
+    \caption{Training data sample illustrating }
+    \label{fig:train_sample_3}
+\end{figure}
+
+% Show in this chapter proofs why your proposed solution works.  However, presenting results ("It worked") without an appropriate explanation does not show thorough understanding.  Aside from the data and results that you have obtained, and their explanation, the discussion includes why components of your proposed solution worked or did not work in accordance to what you described in the evaluation process, and how the proposed solution performed and fared. Interpret the results and the reasons why they were obtained.  If your results are incorrect, apparent discrepancies from theory should be pointed out and explained. In essence, what do the results mean?  Citing existing publication can help you compare your results and your explanations.
+
+% The next items below are not related to the description of this results and discussions chapter, but serve as an opener for the \LaTeX\ portion of this template.
+
+% Here is an example of a citation for ISO~80000-2 standard~\cite{ISO800002}. Another one is~\cite{Einstein} and~\cite{croft-78}. 
+
+% In using this template, the user is expected to have a working knowledge of \LaTeX. A good introduction is in~\cite{Oetiker2014}.  Its latest version can be accessed at \url{http://www.ctan.org/tex-archive/info/lshort}. See the Appendix of \verb|document_guide.pdf| for examples.
+
+% In aggregate form, Table~\ref{tab:outcomes_per_objective} shows the outcomes and completions in applying the methodology of the \documentType\ per objective.
+
+% ---- corrected longtable (multi-page) ----
+\renewcommand{\arraystretch}{1.0} % tighten vertical spacing for table
+\setlength{\tabcolsep}{6pt}      % tighten horizontal padding
+
+\begin{SingleSpace} % keep table single-spaced
+\begin{longtable}{|p{0.24\textwidth}|p{0.40\textwidth}|p{0.14\textwidth}|}
+\caption{Summary of results for achieving the objectives}
+\label{tab:outcomes_per_objective} \\
+
+\hline
+\textbf{Objectives} & \textbf{Results} & \textbf{Locations} \\ \hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Objectives} & \textbf{Results} & \textbf{Locations} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\hline
+\Paste{GO} &
+\begin{enumerate}
+  \item Application prototype implemented (desktop).
+  \item Integration: MediaPipe + OpenCV + GUI framework completed.
+  \item Documentation: architecture, usage, installer prepared.
+\end{enumerate}
+& Sec.~\ref{sec:implement} on p.~\pageref{sec:implement} \\ \hline
+
+\Paste{SO1} &
+\begin{enumerate}
+  \item Real-time pipeline achieving target fps and detection accuracy (reported in Sec.~\ref{sec:results_quant}).
+  \item Preprocessing and optimization applied.
+  \item Accuracy/evaluation results in Table~\ref{tab:accuracy_results}.
+\end{enumerate}
+& Sec.~\ref{sec:implement} on p.~\pageref{sec:implement} \\ \hline
+
+\Paste{SO2} &
+\begin{enumerate}
+  \item Dataset collection under diverse conditions completed.
+  \item Augmentation and retraining produced measured robustness gains.
+  \item Validation metrics summarized in Sec.~\ref{sec:results_robustness}.
+\end{enumerate}
+& Sec.~\ref{sec:implement} on p.~\pageref{sec:implement} \\ \hline
+
+\Paste{SO3} &
+\begin{enumerate}
+  \item Scoring and feedback engine implemented; per-segment reports generated.
+  \item Latency measurements and UI timing logged (see Sec.~\ref{sec:results_latency}).
+\end{enumerate}
+& Sec.~\ref{sec:implement} on p.~\pageref{sec:implement} \\ \hline
+
+\Paste{SO4} &
+\begin{enumerate}
+  \item User study (n~\(\geq\)~10) conducted; user satisfaction and metrics collected.
+  \item Evaluation report compiled with recommendations.
+\end{enumerate}
+& Sec.~\ref{sec:implement} on p.~\pageref{sec:implement} \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+% ---- end corrected longtable ----
+
+% \graytx{\Blindtext}
+
+\section{Summary}
+
+Provide the gist of this chapter such that it reflects the contents and the message.
