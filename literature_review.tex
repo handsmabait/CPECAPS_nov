@@ -87,11 +87,76 @@ For cultural preservation, motion capture (MoCap) has been widely adopted. Rizha
 
 These studies show the potential of pose estimation and deep learning for advancing both modern dance movement design and traditional folk dance preservation. However, there is little to no research in the Philippines that applies pose estimation to folk dances—particularly Tinikling—representing a significant gap and opportunity for future exploration. 
 
-% \begin{itemize}
-% 	\item mentioning the problem
-% 	\item showing how your solution is better (can be better (for proposals))
-% \end{itemize}
+% ---- 'Lacking in the Approaches' table (paste into your 'Lacking in the Approaches' section) ----
+\renewcommand{\arraystretch}{1.0}
+\setlength{\tabcolsep}{6pt}
 
+\begin{SingleSpace}
+\begin{longtable}{|p{0.22\textwidth}|p{0.30\textwidth}|p{0.44\textwidth}|}
+\caption{Movements / body parts detected and limitations observed in reviewed approaches}
+\label{tab:lacking_in_approaches} \\
+
+\hline
+\textbf{Author} & \textbf{Body Part Detected} & \textbf{Lacking in Approaches} \\ \hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries Table \thetable\ (continued)}} \\ \hline
+\textbf{Author} & \textbf{Body Part Detected} & \textbf{Lacking in Approaches} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\emph{Venkatrayappa et al. (2024)} &
+Full body with 3D body mesh and joints &
+Single-frame methods fail on fast, complex dance motion; multi-frame approaches are needed. \\ \hline
+
+\emph{Protopapadakis et al. (2018)} &
+Upper and lower body joints &
+Designed to track frontal views only; front/back ambiguity and limited movement range handling. \\ \hline
+
+\emph{Zhao et al. (2025)} &
+Full body &
+Sensitive to occlusion and heavy background clutter; requires sizable compute for real-time feedback. \\ \hline
+
+\emph{Lei et al. (2023)} &
+Full body &
+Struggles with inter-subject variability and scale changes. \\ \hline
+
+\emph{Ju (2025)} &
+Full body &
+Heavy reliance on large, well-labelled datasets and computationally heavy models. \\ \hline
+
+\emph{Xu et al. (2022)} &
+Multi-person body keypoints &
+Adaptive-hypergraph complexity can be computationally heavy and harder to deploy in real time. \\ \hline
+
+\emph{T\"olgyessy et al. (2021)} &
+Full joint skeleton &
+Sensor-based skeleton tracking misses joints under occlusion, degrades with distance, and shows inter-device variance. \\ \hline
+
+\emph{Yu \& Xiong (2019)} &
+Major limb movement trajectories &
+DTW scoring is sensitive to temporal misalignment and sensor noise. \\ \hline
+
+\emph{Rallis et al. (2019)} &
+Full body with 3D skeleton &
+Low-cost sensors (e.g., Kinect) have limited spatial fidelity vs motion-capture rigs; noisy trajectories. \\ \hline
+
+\emph{Sun \& Song (2025)} &
+Full body with skeleton &
+Improved HRNet variants remain affected by background interference, occlusion, and scale sensitivity. \\ \hline
+
+\emph{B\"uy\"ukg\"okoglan \& U\u{g}uz (2025)} &
+Upper and lower body keypoints &
+Scoring is vulnerable to per-performer style variation and dataset bias. \\ \hline
+
+\end{longtable}
+\end{SingleSpace}
+% ---- end table ----
 
 
 \section{Summary}
