@@ -55,8 +55,8 @@
 \contentsline {section}{\numberline {6.2}Training Dataset}{40}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Model Evaluation and Discussion}{40}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Summary}{46}{section.6.4}%
-\contentsline {chapter}{References}{47}{chapter*.26}%
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Member Skillset Identification}}{48}{appendix.A}%
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Work Breakdown StructureCapstone Project on Operational Technologies}}{49}{appendix.B}%
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Vita}}{52}{appendix.C}%
+\contentsline {chapter}{References}{48}{chapter*.26}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Member Skillset Identification}}{49}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Work Breakdown StructureCapstone Project on Operational Technologies}}{50}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Vita}}{53}{appendix.C}%
 \contentsfinish 
