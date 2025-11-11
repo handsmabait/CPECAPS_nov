@@ -1,38 +1,47 @@
+
+
 \section{Concluding Remarks}
 
-In this \documentType, \ldots
+In this \documentType, we developed a real-time pose estimation application to make learning the traditional Filipino dance Tinikling more accessible and affordable. The system combines MediaPipe for skeletal tracking and OpenCV for image processing to record users' movements in real time and provide immediate feedback. A diverse dataset of Tinikling videos collected under varied lighting and background conditions was used during training and augmented to improve robustness. Movement alignment against reference choreography is performed using Dynamic Time Warping, producing an instantaneous performance score. The implemented system achieved a movement classification accuracy of \(65.7\%\) and a quality-assessment score of \(84.6\%\). User testing showed responsive, low-latency operation and indicated that the application is intuitive, useful, and easy to navigate.
 
-Put here the main points that should be known and learned about the  work topic. Summarize or give the gist of the essential principles and inferences drawn from your results.
+This work demonstrates that pose-estimation technology can enhance cultural dance education without requiring expensive equipment or expert supervision. By providing measurable feedback on accuracy, timing, and coordination, the system transforms practice into an interactive learning experience and offers a scalable approach to preserving and teaching traditional dances.
 
 \section{Contributions}
 
-The interrelated \index{contributions} contributions and supplements that have been developed by the author(s) in this \documentType \ are listed as follows.  Only those that are unique to the authors' work are included.
+The interrelated \index{contributions} contributions and supplements developed by the author in this \documentType\ are listed as follows. Only those that are unique to the author's work are included.
 
 \begin{itemize}
-  \item the ; 
-	
-	\item the ; 
-  
-  \item the ; 
-	
+  \item Implementation of a real-time pose estimation application for Tinikling using MediaPipe and OpenCV, designed to run on standard consumer hardware (webcam + laptop).
+  \item Creation of a varied dataset of Tinikling performances recorded under different lighting, backgrounds, and camera perspectives, and application of data augmentation to improve model robustness.
+  \item Development of a scoring and feedback pipeline that aligns user movements to reference choreography via Dynamic Time Warping and returns an immediate performance score.
+  \item Integration of movement classification and quality assessment modules, producing reported performance metrics (movement classification accuracy: \(65.7\%\); quality assessment score: \(84.6\%\)).
+  \item Design and evaluation of a desktop user interface that records users in real time, displays feedback, and was validated through user testing for responsiveness and ease of use.
 \end{itemize}
-
 
 \section{Recommendations}
 
-\graytx{\Blindtext}
+The system can be further improved through continuous expansion of the training dataset. Incorporating additional video samples that feature a wider range of dancers, camera perspectives, and lighting conditions would enhance the model's adaptability across diverse users and environments. Refining the classification model to better recognize temporal patterns or sequences would enable more accurate tracking of continuous movements and reduce errors during rapid transitions. Furthermore, the feedback component may be developed to include detailed, step-by-step guidance or clearer visual indicators that highlight deviations between the user's performance and the reference movements; these improvements would help learners identify and correct technique more effectively.
+
+Ensuring accessibility is a key consideration. Optimizing the system for lower-end hardware will allow users with older devices to benefit from the application without performance limitations. Developing a mobile version could extend reach, making the tool available to more users in varied settings. Broader user testing, involving participants from different backgrounds, will provide valuable insights into the model's reliability and inclusiveness. At the same time, strict attention must be given to data privacy and ethical handling of recordings—implementing measures such as local data storage and obtaining explicit user consent will ensure responsible use and protection of personal information.
+
+The application's potential extends beyond Tinikling. Integrating additional Filipino folk dances could transform it into a digital archive that promotes cultural preservation through modern technology. Collaboration with schools, cultural institutions, and dance educators would help establish standardized reference performances and align the system with authentic educational objectives.
 
 \section{Future Prospects}
 
-There are several prospects that may be extended for further studies. \ldots So the suggested topics are listed in the following.
+There are several prospects that may be extended for further studies. The suggested topics are listed in the following.
 
 \begin{enumerate}
-	\item  the \ldots.
+	\item Continued enlargement and diversification of the training dataset to include more performers, body types, clothing, camera angles, and environmental conditions to improve generalization.
 	
-	\item  the \ldots.
-		
-	\item  the \ldots.
+	\item Research and implementation of temporal modeling techniques (e.g., sequence models, temporal convolutional networks) to better capture motion dynamics and improve recognition during rapid transitions.
+	
+	\item Enhancement of the feedback module with visual overlays, step-by-step corrective guidance, and targeted exercises that address specific errors detected by the system.
+	
+	\item Porting and optimizing the application for low-end devices and mobile platforms to increase accessibility and deployment potential in schools and community centers.
+	
+	\item Expanded user studies across diverse demographic groups and formal evaluation of pedagogical effectiveness; simultaneously implement robust privacy-preserving policies such as opt-in local storage and anonymization.
+	
+	\item Extension of the platform to include additional Filipino folk dances and formal collaboration with cultural institutions to build standardized reference libraries for preservation and teaching.
 \end{enumerate}
 
 Note that for ECE undergraduate theses, as per the directions of the thesis adviser, Recommendations and Future Directives will be removed for the hardbound copy but will be retained for database storage.
-

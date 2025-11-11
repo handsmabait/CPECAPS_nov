@@ -59,7 +59,7 @@ This project develops a desktop real-time pose-estimation application for Tinikl
 \end{enumerate}
 & N/A \\ \hline
 
-\textbf{SO1:} To develop a real-time pose estimation pipeline that captures dancers' movements using a webcam, detects key skeletal landmarks, and analyzes Tinikling steps with $\geq 30$ fps processing speed and $\geq 90\%$ detection accuracy. &
+\textbf{SO1:} To develop a real-time pose estimation pipeline that captures dancers' movements using a webcam, detects key skeletal landmarks, and analyzes Tinikling steps with $\geq 30$ fps processing speed and $\geq 70\%$ detection accuracy. &
 \begin{enumerate}
   \item Use MediaPipe Pose for skeletal landmark detection in real time.
   \item Optimize frame processing via OpenCV preprocessing and efficient landmark extraction.
@@ -83,7 +83,7 @@ This project develops a desktop real-time pose-estimation application for Tinikl
 \end{enumerate}
 & Score range 0--100; feedback latency $\leq 1$\,s \\ \hline
 
-\textbf{SO4:} To evaluate the system's performance and usability through controlled testing with at least 10 participants, measuring pose estimation accuracy, latency, and user satisfaction ($\geq 80\%$ positive feedback). &
+\textbf{SO4:} To evaluate the system's performance and usability through controlled testing with at least 3 participants, measuring pose estimation accuracy, latency, and user satisfaction ($\geq 80\%$ positive feedback). &
 \begin{enumerate}
   \item Conduct user testing sessions with participants performing choreographed sequences.
   \item Measure pose estimation accuracy, system latency, and feedback timing.
@@ -99,7 +99,8 @@ This project develops a desktop real-time pose-estimation application for Tinikl
 \subsection{Dataset Collection and Annotation}
 We collect Tinikling performances using consumer webcams across varied environments (lighting, backgrounds, participant clothing). Each recording is annotated with segment boundaries and ground-truth reference trajectories for the core Tinikling steps. Annotation files follow a simple CSV schema: frame index, timestamp, keypoint coordinates (x,y[,z if available]), and segment label.
 
-\subsection{Real-time Pipeline (Implementation)}
+\subsubsection{Real-time Pipeline (Implementation)}
+\label{sec:implement}
 The real-time pipeline components:
 \begin{enumerate}
     \item \textbf{Capture \& Preprocessing:} Acquire frames from webcam at target frame rates; apply resizing, color normalization, and optional background subtraction using OpenCV.

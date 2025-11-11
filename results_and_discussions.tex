@@ -3,8 +3,10 @@
 
 % Included by document.tex which contains the \chapter{Results and Discussions}
 \label{ch:result_discuss}
+\label{sec:results_quant}
 
-\section{Leg Landmark Detection Results}
+\subsection{Leg Landmark Detection Results}
+\label{sec:results_quant}
 
 The implementation of the leg tracking system successfully demonstrates the capability to detect and track key anatomical landmarks on the lower extremities. Figure \ref{fig:leg_landmark} illustrates the detected landmarks overlaid on the leg region, showing the system's ability to identify critical points such as the hip, knee, and ankle joints.
 
@@ -53,8 +55,8 @@ The training dataset comprises video frames captured from various walking scenar
     \label{fig:train_sample_1}
 \end{figure}
 
-\section{Model Evaluation and Discussion}
-
+\subsection{Model Evaluation and Discussion}
+\label{sec:results_robustness}
 The developed pose-based movement classification model was evaluated using the collected video data and corresponding ground-truth annotations. The results demonstrate the system’s ability to recognize leg movement patterns and assess the quality of performance with reasonable accuracy.
 
 Figure~\ref{fig:train_sample_1} illustrates a live prediction sample captured during runtime, showing the model’s ability to process incoming video frames in real time. The overlayed labels indicate the detected dance movement and its corresponding quality classification (e.g., \textit{excellent}, \textit{good}). This confirms that the inference pipeline can operate interactively, making it suitable for applications such as performance feedback or dance training systems.
@@ -80,6 +82,9 @@ Overall, the evaluation confirms that the proposed system is effective in identi
     \end{tabular}
 \end{table}
 
+
+\subsection{Latency and Feedback Timing}
+\label{sec:results_latency}
 % Show in this chapter proofs why your proposed solution works.  However, presenting results ("It worked") without an appropriate explanation does not show thorough understanding.  Aside from the data and results that you have obtained, and their explanation, the discussion includes why components of your proposed solution worked or did not work in accordance to what you described in the evaluation process, and how the proposed solution performed and fared. Interpret the results and the reasons why they were obtained.  If your results are incorrect, apparent discrepancies from theory should be pointed out and explained. In essence, what do the results mean?  Citing existing publication can help you compare your results and your explanations.
 
 % The next items below are not related to the description of this results and discussions chapter, but serve as an opener for the \LaTeX\ portion of this template.
